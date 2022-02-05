@@ -1,0 +1,242 @@
+#Alacritty config file
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: alacritty
+
+schemes:
+  Monokai: &monokaidark # custom theme name
+    # Default colors
+    primary:
+      background: '0x272822'
+      foreground: '0xCACACA'
+
+    # Normal colors
+    normal:
+      black:   '0x272822'
+      red:     '0xA70334'
+      green:   '0x74AA04'
+      yellow:  '0xB6B649'
+      blue:    '0x01549E'
+      magenta: '0x89569C'
+      cyan:    '0x1A83A6'
+      white:   '0xCACACA'
+
+    # Bright colors
+    bright:
+      black:   '0x7C7C7C'
+      red:     '0xF3044B'
+      green:   '0x8DD006'
+      yellow:  '0xCCCC81'
+      blue:    '0x0383F5'
+      magenta: '0xa87db8'
+      cyan:    '0x58C2E5'
+      white:   '0xFFFFFF'
+  
+  # Colors (Ayu Dark)
+  Ayu Dark: &ayudark
+  # Default colors
+  primary:
+    background: '#0A0E14'
+    foreground: '#B3B1AD'
+
+  # Normal colors
+  normal:
+    black: '#01060E'
+    red: '#EA6C73'
+    green: '#91B362'
+    yellow: '#F9AF4F'
+    blue: '#53BDFA'
+    magenta: '#FAE994'
+    cyan: '#90E1C6'
+    white: '#C7C7C7'
+
+  # Bright colors
+  bright:
+    black: '#686868'
+    red: '#F07178'
+    green: '#C2D94C'
+    yellow: '#FFB454'
+    blue: '#59C2FF'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'
+  
+  # Colors (Base16 Default Dark)
+  Base 16 Default Dark: &b16d
+  # Default colors
+  primary:
+    background: '#181818'
+    foreground: '#d8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#d8d8d8'
+    cursor: '#d8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '#181818'
+    red:     '#ab4642'
+    green:   '#a1b56c'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#86c1b9'
+    white:   '#d8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '#585858'
+    red:     '#ab4642'
+    green:   '#a1b56c'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#86c1b9'
+    white:   '#f8f8f8'
+
+  # Colors (Blood Moon)
+  Blood Moon : &bld
+  # Default colors
+  primary:
+    background: '#10100E'
+    foreground: '#C6C6C4'
+
+  # Normal colors
+  normal:
+    black:   '#10100E'
+    red:     '#C40233'
+    green:   '#009F6B'
+    yellow:  '#FFD700'
+    blue:    '#0087BD'
+    magenta: '#9A4EAE'
+    cyan:    '#20B2AA'
+    white:   '#C6C6C4'
+
+  # Bright colors
+  bright:
+    black:   '#696969'
+    red:     '#FF2400'
+    green:   '#03C03C'
+    yellow:  '#FDFF00'
+    blue:    '#007FFF'
+    magenta: '#FF1493'
+    cyan:    '#00CCCC'
+    white:   '#FFFAFA'
+
+custom_cursor_colors : true
+
+# Colors - paste theme here
+colors:
+  # Default colors
+  primary:
+    background: '#10100E'
+    foreground: '#C6C6C4'
+
+  # Normal colors
+  normal:
+    black:   '#10100E'
+    red:     '#C40233'
+    green:   '#009F6B'
+    yellow:  '#FFD700'
+    blue:    '#0087BD'
+    magenta: '#9A4EAE'
+    cyan:    '#20B2AA'
+    white:   '#C6C6C4'
+
+  # Bright colors
+  bright:
+    black:   '#696969'
+    red:     '#FF2400'
+    green:   '#03C03C'
+    yellow:  '#FDFF00'
+    blue:    '#007FFF'
+    magenta: '#FF1493'
+    cyan:    '#00CCCC'
+    white:   '#FFFAFA'
+
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam
+
+
+font:
+#  normal:
+#    family: Trebuchet MS
+#    style: Regular
+
+#  bold:
+#    family: Trebuchet MS
+#    style: Bold
+
+#  italic:
+#    family: Trebuchet MS
+#    style: Italic
+
+#  bold_italic:
+#    family: Trebuchet MS
+#    style: Bold Italic
+
+  size: 14
+
+# Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+  # increasing `y` moves the glyph upwards.
+  glyph_offset:
+    x: 0
+    y: 0
+
+background_opacity: 1.0 #0.95
+
+mouse_bindings:
+  - { mouse: Right, action: PasteSelection }
+
+key_bindings:
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+
+selection:
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+url:
+    # URL launcher
+    #
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    #
+    # When set to `None`, URL launching will be disabled completely.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux) xdg-open
+    #   - (Windows) explorer
+    launcher: explorer
+
+    # URL modifiers
+    #
+    # These are the modifiers that need to be held down for opening URLs when clicking
+    # on them. The available modifiers are documented in the key binding section.
+    modifiers: None
+window:
+  # Window title
+  #title: $(pwd.path)
+
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
