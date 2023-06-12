@@ -1,0 +1,40 @@
+# Lines starting with # are comments
+
+#Verbose output all the time
+#--verbose
+# Always extract audio
+#-x
+#handle account
+#--username johnjonesrico
+--cookies-from-browser firefox
+--mark-watched
+
+#Use aria2c for downloads
+--concurrent-fragments 4
+--downloader aria2c.exe
+
+#path to latest ffmpeg
+--ffmpeg-location "C:\UserPrograms\ffmpeg\bin"
+
+#handle download
+#--concurrent-fragments 4
+
+#Handle Subtitles
+--sub-lang en
+--embed-subs
+--embed-thumbnail
+--embed-chapters
+
+#Remove sponsor segments
+--sponsorblock-remove default
+#Save all videos under Videos directory
+--paths "D:\Videos"
+--paths "temp:tmp"
+--output "%(uploader)s\%(playlist)s\%(playlist_index)s%(title)s.%(ext)s"
+# When video is not part of a playlist
+--output-na-placeholder ''
+
+#arguments for aria2c
+--downloader-args aria2c:" --max-concurrent-downloads=8 --max-connection-per-server=10 --min-split-size=1M"
+
+
